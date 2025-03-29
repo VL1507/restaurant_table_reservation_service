@@ -22,10 +22,12 @@ jobs:
 
             - name: Install dependencies
               run: |
+                  cd backend
                   python -m pip install --upgrade pip
-                  pip install mypy
+                  pip install uv
+                  uv sync
 
             - name: Run mypy
               run: |
                   cd backend
-                  mypy . --explicit-package-bases
+                  uv run mypy . --explicit-package-bases

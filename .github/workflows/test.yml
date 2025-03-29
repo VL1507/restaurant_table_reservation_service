@@ -21,9 +21,12 @@ jobs:
 
             - name: Install dependencies
               run: |
+                  cd backend
                   python -m pip install --upgrade pip
-                  pip install pytest
+                  pip install uv
+                  uv sync
 
             - name: Run tests
               run: |
-                  pytest
+                  cd backend
+                  uv run pytest
