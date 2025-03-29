@@ -15,7 +15,7 @@ class CORSSettings(BaseSettingsWithConfigDict):
 
 
 class DBSettings(BaseSettingsWithConfigDict):
-    db1_url: str
+    db_url: str
     db_echo: bool = False
 
 

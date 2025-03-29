@@ -6,5 +6,11 @@ format:
 	uv run ruff check --select I --fix
 	uv run ruff format .
 
+format_check:
+	uv run ruff check
+
 testapp:
 	uv run pytest
+
+type:
+	uv run mypy . --explicit-package-bases

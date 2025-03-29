@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+from typing import Any, AsyncGenerator
 
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
@@ -27,7 +28,7 @@ class UnitOfWork:
         await self.session.commit()
 
     @asynccontextmanager
-    async def start_with(self):
+    async def start_with(self) -> AsyncGenerator[Any, Any]:
         self.session = self.session_factory()
         try:
             yield self
