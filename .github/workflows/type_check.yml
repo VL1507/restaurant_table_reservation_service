@@ -27,4 +27,5 @@ jobs:
 
             - name: Run mypy
               run: |
+                  cd backend
                   mypy . --explicit-package-bases
