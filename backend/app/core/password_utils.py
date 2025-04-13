@@ -3,7 +3,7 @@ from argon2.exceptions import VerificationError, VerifyMismatchError
 
 
 def hash_password(password: str) -> str:
-    """Хеширует пароль."""
+    """Хэширует пароль."""
     ph = PasswordHasher()
     return ph.hash(password)
 
